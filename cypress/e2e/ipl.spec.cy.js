@@ -1,5 +1,10 @@
 describe('template spec', () => {
 
+  /* 
+    Const function which returns for foreign player count
+      - Expects Array of Objects consisting of players
+      - Returns foreign player count
+  */
 
   const getFoeignPayerCount = (team_details) => {
     let count = 0;
@@ -11,6 +16,12 @@ describe('template spec', () => {
     })
     return count;
   }
+
+  /* 
+    Const function which returns for Wicket keeper count
+      - Expects Array of Objects consisting of players
+      - Returns Wicket keeper count
+  */
 
   const getKeeperCount = (team_details) => {
     let count = false;
@@ -27,6 +38,9 @@ describe('template spec', () => {
   }
 
   beforeEach(() => {
+    /*
+      Servers Players.json for each tests
+    */
     cy.fixture('example').then(function (example) {
       this.example = example
   })
@@ -35,11 +49,18 @@ describe('template spec', () => {
 
 
   it('Test to validate 4 foreign players in a team',function () {
-    expect(getFoeignPayerCount(this.example.player)).to.equal(4)
+
+    //Fetch count of players using getFoeignPayerCount method
+    let foreignPlayerCount = getFoeignPayerCount(this.example.player)
+    //Assertion
+    expect(foreignPlayerCount).to.equal(4)
     
   })
 
   it('Test to validate atleast one wicket keeper',function () {
-    expect(getKeeperCount(this.example.player)).to.be.true
+    //Fetch count of players using getKeeperCount method
+    let wicketKeeperCount = getKeeperCount(this.example.player)
+    //Assertion
+    expect(wicketKeeperCount).to.be.true
   })
 })
