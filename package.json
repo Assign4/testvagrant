@@ -1,0 +1,14 @@
+{
+  "name": "testvagrant",
+  "version": "1.0.0",
+  "description": "testvagrant coding assessment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "manoj salugu",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.5.1"
+  }
+}
