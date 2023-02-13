@@ -41,8 +41,8 @@ describe('template spec', () => {
     /*
       Servers Players.json for each tests
     */
-    cy.fixture('example').then(function (example) {
-      this.example = example
+    cy.fixture('team_rcb').then(function (team) {
+      this.team = team
   })
 
 })
@@ -51,7 +51,7 @@ describe('template spec', () => {
   it('Test to validate 4 foreign players in a team',function () {
 
     //Fetch count of players using getFoeignPayerCount method
-    let foreignPlayerCount = getFoeignPayerCount(this.example.player)
+    let foreignPlayerCount = getFoeignPayerCount(this.team.player)
     //Assertion
     expect(foreignPlayerCount).to.equal(4)
     
@@ -59,7 +59,7 @@ describe('template spec', () => {
 
   it('Test to validate atleast one wicket keeper',function () {
     //Fetch count of players using getKeeperCount method
-    let wicketKeeperCount = getKeeperCount(this.example.player)
+    let wicketKeeperCount = getKeeperCount(this.team.player)
     //Assertion
     expect(wicketKeeperCount).to.be.true
   })
