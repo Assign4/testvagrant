@@ -9,7 +9,6 @@ describe('template spec', () => {
   const getFoeignPayerCount = (team_details) => {
     let count = 0;
     team_details.forEach( (player) => {
-      //console.log(typeof player.country)
       if(player.country != 'India') {
         count ++;
       }
@@ -26,8 +25,7 @@ describe('template spec', () => {
   const getKeeperCount = (team_details) => {
     let count = false;
     team_details.forEach( (player) => {
-      //console.log(typeof player.country)
-      if(player.role != 'Wicket-keeper') {
+      if(player.role == 'Wicket-keeper') {
         count ++;
       }
     })
